@@ -1,123 +1,230 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title>EXPENSE MANAGER</title>
-     <style type="text/css">
-		div{
-			color: white; 
-			background-image:url("bac.jpg");
-			font-family: Verdana;
-			border: 10px solid black;
-			padding: 50px;
-			margin: 20px;
-			align-items: center;
-		}
-			table {
-        border-collapse: collapse;
+	<head>
+		<title>Expense Manager</title>
+        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+        <style>
+body
+{
+	margin: 0px;
+	padding: 0px;
+}
+.bg
+{
+	background-image: url("image/bg.jpg");
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+}
+.bg h1
+{
+	color: black;
+}
+.savings
+{
+	width: 200px;
+	height: 100px;
+	background-color:lightblue;
+	margin-left: 320px;
+	margin-top: 50px;
+	color: white;
+}
+.savings input
+{
+	height: 40px;
+	background-color: white;
+	font-size: 15px;
+ }
+.income
+{
+	width: 200px;
+	height: 100px;
+	background-color: lightblue;
+	margin-left: 790px;
+	margin-top: -120px;
+	color: white;	
+}
+.income input
+{
+	height: 40px;
+	background-color: white;
+	font-size: 15px;
+ }
+.expense
+{
+	width: 200px;
+	height: 100px;
+	background-color: lightblue;
+	margin-left: 550px;
+	margin-top: -120px;	
+	color: white;
+}
+.expense input
+{
+	height: 40px;
+	background-color: white;
+	font-size: 15px;
+ }
+.half1
+{
+	width: 350px;
+	height: 335px;
+	background-color: lightblue;
+	margin-left:270px;
+	margin-top: 100px;
+	color: white;
+}
+.half1 input
+{
+	height: 40px;
+	width: 300px;
+	background-color: white;
+	font-size: 18px;
+}
+.half1 button
+{
+	background-color: #3d3d3d;
+	margin-top: 42px;
+	margin-left: 50px;
+}
+.half1 button h1
+{
+	color: white;
+}
+.half2
+{
+	width: 350px;
+	height: 335px;
+	background-color: lightblue;
+	margin-left:720px;
+	margin-top: -356px;
+	color: white;
+}
+.half2 input
+{
+	height: 40px;
+	width: 300px;
+	background-color: white;
+	font-size: 18px;
+}
+.half2 button
+{
+	background-color: #3d3d3d;
+	margin-top: 42px;
+	margin-left: 50px;	
+}
+.half2 button h1
+{
+	color: white;
+}
+</style>
+
+	</head>
+	<body>
+		<div class="bg">
+			<center><strong><h1>Expense Manager</h1></strong></center>
+				<div class="savings">
+					<center><h2>SAVINGS</h2></center>
+					<center><input type="text" id="total" class="total_salary" ></center>
+        		</div>
+        		<div class="income">
+        			<center><h2>INCOME</h2></center>
+        			<center><input type="text" class="income_box font_size" id="income1"/></center> 
+        
+        		</div>
+        		<div class="expense">
+					<center><h2>Expenses</h2></center>
+					<center><input type="text" class="expense_box font_size" id="expense"></center>
+        		</div>
+        		<div class="half1">
+        			<center><h2 class="text_align">Income Source</h2></center>
+           	 		<center><input type="text" name="expense" id="salary" ></center>
+            		<center><h2 class="text_align_second">Amount</h2></center>
+	            	<center><input type="text"  id="income" ></center>
+	            	<button class="income" onclick="income()"><h1>ADD INCOME</h1></button>
+	            	 
+        		</div>
+        		<h1 style="float: right;  margin-top: -560px; margin-right: 250px; font-family: sans-serif; font-size: 23px; color: white" id="h2">INCOME DETAILS</h1>
+        		<div class="half2">
+	        		<h2 class="text_align_second">Expense Source</h2>
+	            	<input type="text" id="expenses" >
+	            	<h2>Amount</h2>
+	            	<input type="text" id="amount" >
+	            	<button class="expense" onclick="expense()"><h1>SHOW EXPENSE</1></button>
+
+        		</div>
+        		<h1 style="float: right; margin-top: -560px; font-family: sans-serif; font-size: 23px; color: white" id="h1">EXPENSE DETAILS</h1>
+        		<!-- <div class="view">
+        			<center><h1>isme shopw kr jo show krna hai wo</h1></center>
+          	    </div> -->
+	 	</div>
+
+	 	<!-- JAvaScript Part -->
+         <script type="text/javascript">
+            var arr1=[];	
+         function income()
+         {	 
+             var sum=0;
+             var input1= (document.getElementById("salary").value);
+             var income1=Number(document.getElementById("income").value);
+             // var expense=Number(document.getElementById("expense").value);
+              var total=Number(document.getElementById("total").value);
+             sum++
+             
+         /*	if(score<min_score)
+             {
+                 document.getElementById("min_score").value=score;
+             }
+             else if(score>max_score)
+             {
+                 document.getElementById("max_score").value=score;
+             } */
+                
+             var para=document.createElement('p');
+             var element=document.querySelector('#h2')
+             element.appendChild(para)
+             para.textContent=input1 + '-' +income1 ;
+             arr1.push(income1);
+           /*  document.getElementById("min_score").value = Math.min.apply(null,arr);
+             document.getElementById("max_score").value = Math.max.apply(null,arr); */
+             var result=0;
+                 for(var i=0;i<arr1.length;i++)
+                 {
+                      result+=arr1[i];
+                 }
+             document.getElementById("income1").value=result;
+             var res=Number(document.getElementById("income").value);
+             document.getElementById("total").value=(res+total);
+             document.getElementById("salary").value="";
+             document.getElementById("income").value="";   
          }
-
-         table, td, th {
-          border:  solid black;
-          height: 20px;
-          width: 400px;
-           }
-	</style>
-<body>
- <center>
-		<div>
-			<h1 style="color: white"> Expense Manager</h1>
-			<input type="text" id= "key"  style="width: 300px;height:100px;border: solid;font-size: 25px;color:darkgrey;"/><br><br>
-			<button onclick="submit()" style="width:200px;height: 40px;font-size:25px;color:black;background-color:#5F9EA0 ;">Save</button><span>
-				<button onclick="total()" style="width: 200px;height: 40px;font-size:25px;color:white;background-color: #556B2F;">Total</button></span><br><br>       
-		
-			<input type="text" id="exp"  style="width: 200px;height:40px;border: solid;font-size: 25px;color: darkgreen;"/><br><br>
-			<label for="add_expense" style="color: black;">Category</label>
-	              <select  id="type">
-		          <option value=></option>
-		          <option value="Rent - "> Rent</option>
-		          <option value="Travel - ">Travel</option>
-		          <option value="Food - ">Food </option>
-		          <option value="Water Bill - ">Water Bill </option>
-		          <option value="Electricity Bill - ">Electricity Bill</option>
-		          <option value="Others - ">Others</option>
-	              </select>
-	        
-	              <button onclick="expense()" style="width:200px;height: 40px;font-size:25px;color:#2F4F4F
-;background-color:coral;">Add Expense</button><br><br>
-                  <label for="add_income" style="color: black;">Category</label>
-	              <select  id="type2">
-		          <option value=></option>
-		          <option value="Salary - "> Salary</option>
-		          <option value="Bank - ">Bank</option>
-		          <option value="Bussiness - ">Bussiness </option>
-		          <option value="Others - ">Others</option>
-	              </select>
-	              <button onclick="income()" style="width: 200px;height: 40px;font-size:25px;color:#2F4F4F
-;background-color: coral;">Add Income</button><br><br>
-	           
-	           	<input type="text" id= "dis" style="width: 300px;height:100px;border: solid;font-size: 25px;color:darkgreen;color:black;"/><br><br>
-			
-	             <table>
-                <tr>
-                 <th style="font-size: 20px;color:red; ">Expense</th>
-                 <th style="font-size: 20px;color:red; ">Amount</th>
-                 </tr>
-                 <tr>
-                 <td style="font-size:20px; color: lightyellow;text-align: center;">Rent</td>
-                 <td id="rent"> </td>
-                </tr>
-                <tr>
-                  <td style="font-size:20px; color: lightyellow;text-align: center;">Food </td>
-                 <td id="food"> </td>
-               </tr>
-               <tr>
-                  <td style="font-size:20px; color: lightyellow;text-align: center;">Travel</td>
-                   <td></td>
-               </tr>
-               <tr>
-                  <td style="font-size:20px; color: lightyellow;text-align: center;">Water Bill </td>
-                 <td id="water"> </td>
-               </tr>
-               <tr>
-                  <td style="font-size:20px; color: lightyellow;text-align: center;">Electricity Bill</td>
-                 <td id="elec"> </td>
-               </tr>
-               <tr>
-                  <td style="font-size:20px; color: lightyellow;text-align: center;">Others</td>
-                 <td id="other"> </td>
-               </tr>
-               <tr>
-                  <td style="font-size:20px; color:black;text-align: center;">Total </td>
-                 <td> </td>
-               </tr>
-               </table>
-             </div>
-      </center>
-      <script>
-	      function expense(){
-         	document.getElementById("key").value = document.getElementById("type").value;
-         	var exp = document.getElementById("exp").value;          
-
-         	 document.getElementById("key").value += exp
-		}
-		function income(){
-			document.getElementById("key").value = document.getElementById("type1").value;
-         	var inm = document.getElementById("inm").value; 
-
-         	document.getElementById("key").value += inm 
-		}
-		function submit(){
-			var sub = document.getElementById("key").value;
-
-			  document.getElementById("dis").value += sub
-		}
-		function total(){
-			var num = document.getElementById("exp");
-		
-
-
-              
-		}
-			
-</script>
-</html>
+        
+         var arr2=[];
+         function expense()
+         {
+             var sum1=0;
+             var input= (document.getElementById("expenses").value);
+             var expense=Number(document.getElementById("amount").value);
+             sum1++
+             var par=document.createElement('p');
+             var element=document.querySelector('#h1')
+             element.appendChild(par)
+             par.textContent=input + '-' +expense ;
+             arr2.push(expense);
+             var res=0;
+                 for(var i=0;i<arr2.length;i++)
+                 {
+                      res+=arr2[i];
+                 }
+             document.getElementById("expense").value=res;
+             var rest=document.getElementById("total").value;
+             var result=document.getElementById("amount").value;
+             document.getElementById("total").value=(rest-result);
+             document.getElementById("expenses").value="";
+             document.getElementById("amount").value="";
+             var final=document.getElementById("total").value;
+            
+         }
+     </script>
+    	</script>
+	</body>
+</html> 
