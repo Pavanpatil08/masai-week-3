@@ -1,7 +1,6 @@
 <html>
 	<head>
 		<title>Expense Manager</title>
-        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
         <style>
 body
 {
@@ -17,14 +16,14 @@ body
 }
 .bg h1
 {
-	color: black;
+	color: red;
 }
 .savings
 {
 	width: 200px;
 	height: 100px;
-	background-color:lightblue;
-	margin-left: 320px;
+	
+	margin-left: 220px;
 	margin-top: 50px;
 	color: white;
 }
@@ -38,8 +37,7 @@ body
 {
 	width: 200px;
 	height: 100px;
-	background-color: lightblue;
-	margin-left: 790px;
+	margin-left: 670px;
 	margin-top: -120px;
 	color: white;	
 }
@@ -53,8 +51,7 @@ body
 {
 	width: 200px;
 	height: 100px;
-	background-color: lightblue;
-	margin-left: 550px;
+	margin-left: 450px;
 	margin-top: -120px;	
 	color: white;
 }
@@ -68,8 +65,7 @@ body
 {
 	width: 350px;
 	height: 335px;
-	background-color: lightblue;
-	margin-left:270px;
+	margin-left:200px;
 	margin-top: 100px;
 	color: white;
 }
@@ -94,8 +90,8 @@ body
 {
 	width: 350px;
 	height: 335px;
-	background-color: lightblue;
-	margin-left:720px;
+	
+	margin-left:550px;
 	margin-top: -356px;
 	color: white;
 }
@@ -109,7 +105,7 @@ body
 .half2 button
 {
 	background-color: #3d3d3d;
-	margin-top: 42px;
+	margin-top: 40px;
 	margin-left: 50px;	
 }
 .half2 button h1
@@ -153,9 +149,7 @@ body
 
         		</div>
         		<h1 style="float: right; margin-top: -560px; font-family: sans-serif; font-size: 23px; color: white" id="h1">EXPENSE DETAILS</h1>
-        		<!-- <div class="view">
-        			<center><h1>isme shopw kr jo show krna hai wo</h1></center>
-          	    </div> -->
+        		
 	 	</div>
 
 	 	<!-- JAvaScript Part -->
@@ -167,17 +161,10 @@ body
              var input1= (document.getElementById("salary").value);
              var income1=Number(document.getElementById("income").value);
              // var expense=Number(document.getElementById("expense").value);
-              var total=Number(document.getElementById("total").value);
+             var total=Number(document.getElementById("total").value);
              sum++
              
-         /*	if(score<min_score)
-             {
-                 document.getElementById("min_score").value=score;
-             }
-             else if(score>max_score)
-             {
-                 document.getElementById("max_score").value=score;
-             } */
+         
                 
              var para=document.createElement('p');
              var element=document.querySelector('#h2')
